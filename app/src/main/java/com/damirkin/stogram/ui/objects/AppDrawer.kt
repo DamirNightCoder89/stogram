@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import com.damirkin.stogram.R
 import com.damirkin.stogram.ui.fragments.SettingsFragment
+import com.damirkin.stogram.utilits.replaceFragment
 import com.mikepenz.materialdrawer.AccountHeader
 import com.mikepenz.materialdrawer.AccountHeaderBuilder
 import com.mikepenz.materialdrawer.Drawer
@@ -92,12 +93,7 @@ class AppDrawer (val mainActivity: AppCompatActivity, val toolbar: Toolbar) {
             ).withOnDrawerItemClickListener(object: Drawer.OnDrawerItemClickListener{
                 override fun onItemClick(view: View?, position: Int, drawerItem: IDrawerItem<*>): Boolean {
                     when (position) {
-                        7 -> mainActivity.supportFragmentManager.beginTransaction()
-                            .addToBackStack(null)
-                            .replace(
-                                R.id.dataContainer,
-                                SettingsFragment()
-                            ).commit()
+                        7 -> mainActivity.replaceFragment(SettingsFragment())
                     }
                     return false
                 }

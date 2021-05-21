@@ -1,15 +1,194 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.fragments.SettingsFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/settings_header_block"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="настройки"
-        android:textColor="@color/black"/>
+        android:layout_height="100dp"
+        android:background="@color/colorPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-</FrameLayout>
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/settings_user_photo"
+            android:layout_width="@dimen/settings_user_photo_width"
+            android:layout_height="@dimen/settings_user_photo_height"
+            android:layout_marginLeft="@dimen/horizontal_margin"
+            android:src="@drawable/def_photo"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/settings_full_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/normalText"
+            android:textColor="@color/white"
+            android:layout_marginStart="@dimen/horizontal_margin"
+            android:layout_marginLeft="@dimen/horizontal_margin"
+            android:layout_marginTop="@dimen/vertical_padding"
+            android:text="Jeck Owl Juniur"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/settings_user_photo"
+            app:layout_constraintTop_toTopOf="@+id/settings_user_photo" />
+
+        <TextView
+            android:id="@+id/user_s"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/smallText"
+            android:layout_marginStart="@dimen/horizontal_margin"
+            android:layout_marginLeft="@dimen/horizontal_margin"
+            android:text="в сети"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/settings_user_photo"
+            app:layout_constraintTop_toBottomOf="@id/settings_full_name" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/settings_btn_change_photo"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/settings_header_block"
+        android:paddingBottom="10dp"
+        style="@style/settingsButtons">
+
+        <ImageView
+            android:id="@+id/settings_photo_change_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_change_photo"
+            android:layout_marginLeft="@dimen/horizontal_margin"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <TextView
+            android:id="@+id/settings_photo"
+            android:text="Set Profile Photo"
+            android:textColor="@color/colorPrimary"
+            app:layout_constraintTop_toTopOf="@id/settings_photo_change_image"
+            app:layout_constraintLeft_toRightOf="@id/settings_photo_change_image"
+            app:layout_constraintBottom_toBottomOf="@id/settings_photo_change_image"
+            style="@style/normalText" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:id="@+id/devider_1"
+        android:layout_width="match_parent"
+        android:layout_height="15dp"
+        android:background="@color/settings_divider_background"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/settings_btn_change_photo"/>
+
+    <TextView
+        android:id="@+id/settings_text_account"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/verticalPaddingSmall"
+        android:text="Аккаунт"
+        android:textSize="@dimen/smallText"
+        android:textStyle="bold"
+        android:textColor="@color/colorPrimary"
+        android:layout_marginLeft="@dimen/horizontal_margin"
+        android:layout_marginTop="@dimen/vertical_large_margin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/devider_1" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/settings_btn_change_number_phone"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/settings_text_account"
+        style="@style/settingsButtons">
+
+        <TextView
+            android:id="@+id/settings_phone_number"
+            android:text="@string/settings_default_phone_number"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            style="@style/normalText" />
+
+        <TextView
+            android:id="@+id/settings_label_phone_number"
+            android:text="@string/settings_label_phone_number"
+            app:layout_constraintTop_toBottomOf="@id/settings_phone_number"
+            app:layout_constraintLeft_toLeftOf="parent"
+            style="@style/smallText" />
+        <View
+            app:layout_constraintTop_toBottomOf="@id/settings_label_phone_number"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            style="@style/separator" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/settings_btn_change_username"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/settings_btn_change_number_phone"
+        style="@style/settingsButtons">
+
+        <TextView
+            android:id="@+id/settings_username"
+            android:text="@string/settings_default_login"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            style="@style/normalText" />
+
+        <TextView
+            android:id="@+id/settings_label_username"
+            android:text="@string/settings_label_login"
+            app:layout_constraintTop_toBottomOf="@id/settings_username"
+            app:layout_constraintLeft_toLeftOf="parent"
+            style="@style/smallText" />
+        <View
+            app:layout_constraintTop_toBottomOf="@id/settings_label_username"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            style="@style/separator" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/settings_btn_change_bio"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/settings_btn_change_username"
+        style="@style/settingsButtons">
+
+        <TextView
+            android:id="@+id/settings_bio"
+            android:text="@string/settings_default_bio"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            style="@style/normalText" />
+
+        <TextView
+            android:id="@+id/settings_label_bio"
+            android:text="@string/settings_label_bio"
+            app:layout_constraintTop_toBottomOf="@id/settings_bio"
+            app:layout_constraintLeft_toLeftOf="parent"
+            style="@style/smallText" />
+        <View
+            app:layout_constraintTop_toBottomOf="@id/settings_label_bio"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            style="@style/separator" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

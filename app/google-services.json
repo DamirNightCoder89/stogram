@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "177326858856",
+    "project_id": "stogram-f391b",
+    "storage_bucket": "stogram-f391b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:177326858856:android:984065ad520e8a6a93d1dd",
+        "android_client_info": {
+          "package_name": "com.damirkin.stogram"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "177326858856-8t1ghfqchtgcf9srkl27irjp0q3ijhod.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBa9rawCQQWugeZKyCE4oTwVZqINg4GDG8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "177326858856-8t1ghfqchtgcf9srkl27irjp0q3ijhod.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

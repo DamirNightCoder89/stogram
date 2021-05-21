@@ -9,6 +9,9 @@
     <color name="white">#FFFFFFFF</color>
     <color name="telegColor">#0088CC</color>
     <color name="telegColorDark">#1C6386</color>
+    <color name="colorGrey">#737272</color>
+
+    <color name="settings_divider_background">#E3E0E0</color>
 
 
     <!-- Material DEFAULT colors -->
@@ -48,4 +51,5 @@
     <color name="material_drawer_dark_selected_text">@color/material_drawer_primary</color>
     <color name="material_drawer_dark_header_selection_text">#FFFFFFFF</color>
     <color name="material_drawer_dark_header_selection_subtext">#B3FFFFFF</color>
+
 </resources>
